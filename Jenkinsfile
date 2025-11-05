@@ -25,9 +25,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out code..."
-                // checkout scm
+                checkout scm
                 // หรือใช้แบบกำหนดเอง หากไม่ใช้ Pipeline from SCM:
-                git url: 'https://github.com/kittinan4452/express-docker-app-jenkins.git'
+                // git url: 'https://github.com/your-username/your-repo.git'
             }
         }
 
