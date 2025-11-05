@@ -6,7 +6,7 @@ pipeline {
     // ถ้า job เป็นแบบ Pipeline from SCM / Multibranch แนะนำเพิ่ม options { skipDefaultCheckout(true) }
     // เพื่อปิดการ checkout อัตโนมัติก่อนเข้า stages (เพราะเรามี checkout scm อยู่แล้ว)
     options { 
-        skipDefaultCheckout(false)   // ถ้าเป็น Pipeline from SCM/Multi-branch
+        skipDefaultCheckout(true)   // ถ้าเป็น Pipeline from SCM/Multi-branch
     }
 
     // กำหนด environment variables
@@ -22,14 +22,14 @@ pipeline {
         // Stage 1: ดึงโค้ดล่าสุดจาก Git
         // ใช้ checkout scm หากใช้ Pipeline from SCM
         // หรือใช้ git url: 'https://github.com/your-username/your-repo.git'
-        stage('Checkout') {
-            steps {
-                echo "Checking out code..."
-                checkout scm
-                // หรือใช้แบบกำหนดเอง หากไม่ใช้ Pipeline from SCM:
-                // git url: 'https://github.com/your-username/your-repo.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         echo "Checking out code..."
+        //         checkout scm
+        //         // หรือใช้แบบกำหนดเอง หากไม่ใช้ Pipeline from SCM:
+        //         // git url: 'https://github.com/your-username/your-repo.git'
+        //     }
+        // }
 
         // Stage 2: ติดตั้ง dependencies และ Run test
         // ใช้ Node.js plugin (ต้องติดตั้ง NodeJS plugin ก่อน) ใน Jenkins หรือ Node.js ใน Docker 
