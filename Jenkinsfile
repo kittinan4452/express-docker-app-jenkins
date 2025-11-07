@@ -42,7 +42,6 @@ pipeline {
                 '''
             }
         }
-
         // Stage 3: สร้าง Docker Image
         // ใช้ Docker ที่ติดตั้งบน Jenkins agent (ต้องติดตั้ง Docker plugin ก่อน) ใน Jenkins หรือ Docker ใน Docker
         stage('Build Docker Image') {
