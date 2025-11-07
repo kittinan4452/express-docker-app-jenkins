@@ -16,6 +16,7 @@ pipeline {
         APP_NAME                  = "express-docker-app-jenkins"
     }
 
+
     // กำหนด stages ของ Pipeline
     stages {
         // Stage 1: ดึงโค้ดล่าสุดจาก Git
