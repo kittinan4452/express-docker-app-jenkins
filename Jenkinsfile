@@ -18,7 +18,6 @@ pipeline {
 
     // กำหนด stages ของ Pipeline
     stages {
-
         // Stage 1: ดึงโค้ดล่าสุดจาก Git
         // ใช้ checkout scm หากใช้ Pipeline from SCM
         // หรือใช้ git url: 'https://github.com/your-username/your-repo.git'
